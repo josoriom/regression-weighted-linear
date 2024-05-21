@@ -1,0 +1,50 @@
+{
+  "name": "ml-regression-weighted-linear",
+  "version": "3.0.1",
+  "description": "Weighted Linear Regression",
+  "main": "./lib/index.js",
+  "module": "./lib-esm/index.js",
+  "types": "./lib/index.d.ts",
+  "files": [
+    "lib",
+    "lib-esm",
+    "src"
+  ],
+  "scripts": {
+    "check-types": "tsc --noEmit",
+    "clean": "rimraf lib lib-esm",
+    "eslint": "eslint src",
+    "eslint-fix": "npm run eslint -- --fix",
+    "prepack": "npm run tsc",
+    "prettier": "prettier --check src",
+    "prettier-write": "prettier --write src",
+    "test": "npm run test-only && npm run eslint && npm run prettier && npm run check-types",
+    "test-only": "vitest --coverage --run",
+    "tsc": "npm run clean && npm run tsc-cjs && npm run tsc-esm",
+    "tsc-cjs": "tsc --project tsconfig.cjs.json",
+    "tsc-esm": "tsc --project tsconfig.esm.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/josoriom/regression-weighted-linear.git"
+  },
+  "author": "josoriom",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/josoriom/regression-weighted-linear/issues"
+  },
+  "homepage": "https://github.com/josoriom/regression-weighted-linear#readme",
+  "devDependencies": {
+    "@vitest/coverage-v8": "^1.6.0",
+    "eslint": "^8.57.0",
+    "eslint-config-cheminfo-typescript": "^12.4.0",
+    "prettier": "^3.0.1",
+    "rimraf": "^5.0.7",
+    "typescript": "^5.4.5",
+    "vitest": "^1.6.0"
+  },
+  "dependencies": {
+    "cheminfo-types": "^1.7.3",
+    "ml-regression-base": "^4.0.0"
+  }
+}
